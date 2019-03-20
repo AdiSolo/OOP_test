@@ -1,4 +1,4 @@
-<?php
+<?php 
 
 namespace Bookstore\Domain;
 
@@ -24,5 +24,10 @@ class Person {
     public function setLastName($lastname)
     {
         $this->lastname = $lastname;
+    }
+
+    public function sayHi()
+    {
+        return "Hello" . $this->firstname;
     }
 }

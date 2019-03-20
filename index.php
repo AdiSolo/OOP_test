@@ -1,6 +1,8 @@
 <?php
 use Bookstore\Domain\Book;
 use Bookstore\Domain\Customer;
+use Bookstore\Domain\Member\Basic;
+use Bookstore\Domain\Member\Premium;
 
 function autoloader($classname)
 {
@@ -23,16 +25,33 @@ spl_autoload_register('autoloader');
     </head>
     <body>
 <?php
+
+            function checkIfValid( Customer $customer, $books )
+            {
+                return $customer->getAmountBorrow() >=  count($books);
+            }
+
+
             $book = new Book('Osho', 'Igrahim', 3);
-            $customer= new Customer( 1 , 'Alex', 'Gahirov', 'alex@mail.ro');
+            $book1 = new Book('Osho', 'Igrahim', 3);
+            $book2 = new Book('Osho', 'Igrahim', 3);
+            $book3 = new Book('Osho', 'Igrahim', 3);
 
-            echo $customer->getFirstName() . ' ' . $customer->getLastName();
+            $customer= new Basic( 1 , 'Alex', 'Gahirov', 'alex@mail.ro');
 
-            echo $customer->setLastName('Smith');
+            // echo $customer->getFirstName() . ' ' . $customer->getLastName();
+            //
+            // echo $customer->setLastName('Smith');
+            //
+            // echo $customer->getFirstName() . ' ' . $customer->getLastName() . '<br>';
+            //
+            var_dump(checkIfValid($customer, [$book, $book2, $book3]));
 
-            echo $customer->getFirstName() . ' ' . $customer->getLastName();
+            var_dump($book->getBook());
 
-?>
+
+
+ ?>
 
     </body>
 </html>

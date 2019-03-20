@@ -1,7 +1,7 @@
 <?php
 namespace Bookstore\Domain;
 
-class Customer extends Person {
+ abstract class Customer extends Person {
 
     private $id;
     private $email;
@@ -13,6 +13,9 @@ class Customer extends Person {
         $this->id = $id;
         $this->email = $email;
     }
+
+  abstract public function getMemberFee();
+  abstract public function getAmountBorrow();
 
     public function getEmail()
     {
