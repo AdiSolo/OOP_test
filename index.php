@@ -37,7 +37,7 @@ spl_autoload_register('autoloader');
             $book2 = new Book('Osho', 'Igrahim', 3);
             $book3 = new Book('Osho', 'Igrahim', 3);
 
-            $customer= new Basic( 1 , 'Alex', 'Gahirov', 'alex@mail.ro');
+            $customer= new Basic( 1 , 'Alex', 'Gahirov', 'alex@mail.ro', 'Horia 6');
 
             // echo $customer->getFirstName() . ' ' . $customer->getLastName();
             //
@@ -47,7 +47,7 @@ spl_autoload_register('autoloader');
             //
             var_dump(checkIfValid($customer, [$book, $book2, $book3]));
 
-            var_dump($book->getBook());
+            var_dump($customer);
 
 
 

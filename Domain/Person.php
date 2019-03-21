@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 namespace Bookstore\Domain;
 
@@ -6,16 +6,19 @@ class Person {
 
     protected $firstname;
     protected $lastname;
+    protected $address;
 
-    public function __construct($firstname, $lastname){
+    public function __construct($firstname, $lastname, $address){
         $this->firstname = $firstname;
         $this->lastname =  $lastname;
+        $this->address = $address;
     }
 
     public function getFirstName()
     {
         return $this->firstname;
     }
+
     public function getLastName()
     {
         return $this->lastname;
